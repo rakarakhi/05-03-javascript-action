@@ -9,8 +9,9 @@ async function main() {
     const octokit = github.getOctokit(GITHUB_TOKEN)
     const input_1 = core.getInput('input_1');
 
-    console.log(input_1)
-    console.log(context)
+    console.log(input_1);
+    core.warning("This workflow was triggered by a "+context.eventName+" event");
+    console.log(context);
 }
 
 // call the function
