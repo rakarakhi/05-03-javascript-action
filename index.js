@@ -1,8 +1,7 @@
 // require the libraries for actions
 const core = require('@actions/core');
 const github = require('@actions/github');
-
-import {context} from '@actions/github';
+const context = github.context;
 
 // use an async function for the main tasks
 async function main() {
