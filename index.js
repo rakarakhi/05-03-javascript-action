@@ -10,7 +10,10 @@ async function main() {
     const input_1 = core.getInput('input_1');
 
     console.log(input_1);
-    core.warning("This workflow was triggered by a "+context.eventName+" event");
+    core.info("INFO: This workflow was triggered by a "+context.eventName+" event");
+    core.notice("NOTICE: This workflow was triggered by a "+context.eventName+" event");
+    core.warning("WARNING: This workflow was triggered by a "+context.eventName+" event");
+    core.error("ERROR: This workflow was triggered by a "+context.eventName+" event");
     console.log(context);
 }
 
