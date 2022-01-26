@@ -8454,10 +8454,12 @@ async function main() {
     const input_1 = core.getInput('input_1');
 
     console.log(input_1);
-    core.info("INFO: This workflow was triggered by a "+context.eventName+" event");
-    core.notice("NOTICE: This workflow was triggered by a "+context.eventName+" event");
-    core.warning("WARNING: This workflow was triggered by a "+context.eventName+" event");
-    core.error("ERROR: This workflow was triggered by a "+context.eventName+" event");
+    core.info("INFO: Workflow was triggered by: " + context.eventName + " event");
+    core.info("INFO: Workflow was triggered by: " + context.actor);
+    core.notice("NOTICE: This is a notice");
+    core.warning("WARNING: This is a warning");
+    core.error("ERROR: This is an error");
+
     console.log(context);
 }
 
