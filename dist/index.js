@@ -8458,6 +8458,7 @@ async function main() {
 
     core.notice("Event type : "+context.eventType);
     core.notice("Event actor: "+context.actor);
+    console.log(context)
 }
 
 // call the function
