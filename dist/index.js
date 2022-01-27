@@ -8457,7 +8457,7 @@ async function main() {
     console.log({ context });
 
     if (!context.payload.action) {
-        console.warning("This action should only be used with pull requests.");
+        core.warning("This action should only be used with pull requests.");
         return
     }
 
