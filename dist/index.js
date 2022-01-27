@@ -8465,6 +8465,12 @@ async function main() {
         issue_number: pull_request.number,
         body: 'Thank you for submitting a pull request! We will try to review this as soon as we can.'
     });
+    await octokit.rest.issues.addLabels({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        issue_number: pull_request.number,
+        labels: ['acknowledged']
+    })
 }
 
 // call the function
@@ -8478,12 +8484,6 @@ octokit.rest.issues.createComment({
     body,
 });
 
-octokit.rest.issues.addLabels({
-    owner,
-    repo,
-    issue_number,
-    labels[].name
-})
 }
 */
 
