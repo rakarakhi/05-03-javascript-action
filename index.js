@@ -12,8 +12,7 @@ async function main() {
     core.notice("Event actor    : "+context.actor);
     core.notice("Event name     : "+context.eventName);
     core.notice("Payload action : "+context.payload.action);
-    console.log(context.payload);
-    console.log(context.repo);
+    console.log({ context });
 
     await octokit.rest.issues.createComment({
         owner: context.repo.owner,
