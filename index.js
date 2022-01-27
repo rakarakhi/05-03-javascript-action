@@ -12,11 +12,12 @@ async function main() {
     core.notice("Event actor    : "+context.actor);
     core.notice("Event name     : "+context.eventName);
     core.notice("Payload action : "+context.payload.action);
-    console.log(context);
+    console.log(context.payload);
     console.log(context.repo);
 
     await octokit.rest.issues.createComment({
-        ...context.repo,
+        owner: context.repo.owner,
+        repo: context.repo.repo,
         issue_number: pull_request.number,
         body: 'Thank you for submitting a pull request! We will try to review this as soon as we can.'
     });
@@ -24,9 +25,6 @@ async function main() {
 
 // call the function
 main();
-
-
-
 
 /*
 octokit.rest.issues.createComment({
