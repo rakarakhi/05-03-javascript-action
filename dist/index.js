@@ -8468,7 +8468,7 @@ async function main() {
     }
 
     // if this pull request is being opened for the first time,
-    // the action will be 'opened'. otherwise it will be some
+    // the payload action will be 'opened'. otherwise it will be some
     // other pull_request action. Take a look at the Webhook payload
     // object for a pull request event here:
     // https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#pull_request
