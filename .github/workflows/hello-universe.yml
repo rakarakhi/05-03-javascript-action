@@ -12,4 +12,3 @@ jobs:
       - uses: automate6500/05-03-javascript-action@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          input_1: "testing testing 1 2 3"
