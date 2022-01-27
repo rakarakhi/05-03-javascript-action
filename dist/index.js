@@ -8457,7 +8457,7 @@ async function main() {
     const { context } = __nccwpck_require__(5493)
 
     // log the context
-    console.log( JSON.stringify(context, null, "    ") );
+    console.log( JSON.stringify(context.payload, null, "    ") );
 
     // see if the payload has an action (push events don't have an action)
     if (!context.payload.action) {
