@@ -8456,8 +8456,9 @@ async function main() {
     const context = github.context;
     const octokit = github.getOctokit(GITHUB_TOKEN)
 
-    core.notice("Event type : "+context.eventName);
-    core.notice("Event actor: "+context.actor);
+    core.notice("Event name     : "+context.eventName);
+    core.notice("Payload action : "+context.payload.action);
+    core.notice("Event actor    : "+context.actor);
     console.log(context)
 }
 
