@@ -8442,29 +8442,24 @@ module.exports = JSON.parse('[[[0,44],"disallowed_STD3_valid"],[[45,46],"valid"]
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-// require the libraries for actions
+
 const core = __nccwpck_require__(3860);
 const github = __nccwpck_require__(5493);
+const { context } = __nccwpck_require__(5493)
+const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
+const octokit = github.getOctokit(GITHUB_TOKEN);
 
-// use an async function for the main tasks
-async function main() {
+const { pull_request } = context.payload;
 
-    // get the inputs
-    const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
-    const input_1 = core.getInput('input_1');
-
-    const context = github.context;
-    const octokit = github.getOctokit(GITHUB_TOKEN)
-
-    core.notice("Event name     : "+context.eventName);
-    core.notice("Payload action : "+context.payload.action);
-    core.notice("Event actor    : "+context.actor);
-    console.log(context)
+async function run() {
+  await octokit.rest.issues.createComment({
+    ...context.repo,
+    issue_number: pull_request.number,
+    body: 'Thank you for submitting a pull request! We will try to review this as soon as we can.'
+  });
 }
 
-// call the function
-main();
-
+run();
 
 })();
 
