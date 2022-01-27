@@ -8457,8 +8457,6 @@ async function main() {
     core.notice("This is a notice");
     core.warning("This is a warning");
     core.error("This is an error");
-    core.setFailed(`Missioned  failed. Aborting with error`);
-
 }
 
 // call the function
