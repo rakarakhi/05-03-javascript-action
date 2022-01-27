@@ -8453,10 +8453,11 @@ async function main() {
     const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
     const input_1 = core.getInput('input_1');
 
-    core.info("INFO: input_1 = " + input_1);
-    core.notice("This is a notice");
-    core.warning("This is a warning");
-    core.error("This is an error");
+    const context = github.context;
+    const octokit = github.getOctokit(GITHUB_TOKEN)
+
+    core.notice("Event type : "+context.eventType);
+    core.notice("Event actor: "+context.actor);
 }
 
 // call the function

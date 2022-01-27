@@ -11,6 +11,9 @@ async function main() {
 
     const context = github.context;
     const octokit = github.getOctokit(GITHUB_TOKEN)
+
+    core.notice("Event type : "+context.eventType);
+    core.notice("Event actor: "+context.actor);
 }
 
 // call the function
