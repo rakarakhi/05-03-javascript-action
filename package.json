@@ -21,6 +21,6 @@
   "homepage": "https://github.com/YOUR_GITHUB_USER_NAME/javascript-action-template#readme",
   "dependencies": {
     "@actions/core": "^1.6.0",
-    "@actions/github": "^5.0.0"
+    "@actions/github": "^6.0.0"
   }
 }
